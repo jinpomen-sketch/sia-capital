@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIA Capital | Sistema de Inversión Automatizado</title>
+    <meta name="description" content="SIA Capital es un sistema de inversión automatizado con más de 7 años de desarrollo. Disciplina operativa, gestión estructurada del riesgo y transparencia total en los mercados financieros.">
+    <meta name="keywords" content="SIA Capital, inversión automatizada, trading automático, gestión de capital, forex, mercados financieros">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SIA Capital | Sistema de Inversión Automatizado">
+    <meta property="og:description" content="Más de 7 años de desarrollo. Inversión automatizada, disciplinada y transparente.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "SIA Capital",
+        "description": "Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.",
+        "url": "https://siacapital.io",
+        "areaServed": "Global",
+        "serviceType": "Automated Investment System"
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #0A1628;
+            --secondary: #132238;
+            --accent: #C9A227;
+            --accent-light: #E5C04B;
+            --text: #F4F6F9;
+            --text-muted: #8A9BB0;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #C9A227 0%, #E5C04B 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(10, 22, 40, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 162, 39, 0.1);
+        }
+        
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav a:hover {
+            color: var(--accent);
+        }
+        
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--primary);
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 2rem 4rem;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(19, 34, 56, 0.8) 0%, transparent 50%),
+                var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A227' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .hero-text h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 540px;
+            line-height: 1.8;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat h3 {
+            font-size: 2.2rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .stat p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+        
+        .hero-card {
+            background: rgba(19, 34, 56, 0.8);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .card-header h4 {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .card-header .live {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4ADE80;
+            font-size: 0.85rem;
+        }
+        
+        .card-header .live::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #4ADE80;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .metric {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+        
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .metric-value.positive {
+            color: #4ADE80;
+        }
+        
+        .metric-value.neutral {
+            color: var(--accent);
+        }
+        
+        /* Section */
+        section {
+            padding: 6rem 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        /* What is SIA */
+        .what-is {
+            background: var(--secondary);
+        }
+        
+        .content-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .content-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .content-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .highlight-box {
+            background: rgba(201, 162, 39, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box p {
+            color: var(--text);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .visual-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .visual-card .big-number {
+            font-size: 5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .visual-card p {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        /* Model */
+        .model {
+            background: var(--primary);
+        }
+        
+        .model-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .model-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .model-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+        }
+        
+        .model-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .model-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .model-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        /* Results */
+        .results {
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        .results-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .result-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(201, 162, 39, 0.15);
+        }
+        
+        .result-card .number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-card .label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .disclaimer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-align: center;
+            margin: 0;
+        }
+        
+        /* Risk */
+        .risk {
+            background: var(--primary);
+        }
+        
+        .risk-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .risk-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .risk-visual {
+            text-align: center;
+        }
+        
+        .stop-circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent) 0deg 54deg, rgba(255,255,255,0.1) 54deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .stop-circle::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .stop-circle span {
+            position: relative;
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .risk-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .risk-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .risk-list {
+            list-style: none;
+        }
+        
+        .risk-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+        
+        .risk-list li::before {
+            content: '🛡️';
+        }
+        
+        /* Security */
+        .security {
+            background: var(--secondary);
+        }
+        
+        .security-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .security-card {
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .security-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .security-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        /* Insurance */
+        .insurance {
+            background: var(--primary);
+            text-align: center;
+        }
+        
+        .insurance-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .insurance-badge {
+            width: 120px;
+            height: 120px;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+        }
+        
+        .insurance h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .insurance p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .insurance-amount {
+            background: rgba(201, 162, 39, 0.1);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem;
+            display: inline-block;
+        }
+        
+        .insurance-amount span {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .insurance-amount strong {
+            font-size: 3rem;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta > div > p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .step h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 300px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-links a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .footer-disclaimer {
+            max-width: 600px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content,
+            .content-grid,
+            .risk-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-text p {
+                margin: 0 auto 2rem;
+            }
+            
+            .model-grid,
+            .results-grid,
+            .security-grid,
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .model-grid,
+            .results-grid,
+            .security-grid,
+            .steps,
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">SIA</div>
+                <div class="logo-text">SIA <span>Capital</span></div>
+            </div>
+            <nav class="nav">
+                <a href="#que-es">Qué es SIA</a>
+                <a href="#modelo">Modelo</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#seguridad">Seguridad</a>
+            </nav>
+            <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary">Comenzar</a>
+        </div>
+    </header>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="badge">
+                    Sistema de Inversión Automatizado
+                </div>
+                <h1>Gestión Estructurada del Capital en <span>Mercados Financieros</span></h1>
+                <p>SIA Capital es un sistema de inversión automatizado diseñado para inversionistas que buscan disciplina operativa, gestión estructurada del riesgo y transparencia total.</p>
+                <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary">
+                    Abrir Cuenta en VT Markets
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>+7 años</h3>
+                        <p>Desarrollo continuo</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100%</h3>
+                        <p>Control del cliente</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/5</h3>
+                        <p>Operativa automatizada</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <h4>Rendimiento del Sistema</h4>
+                        <div class="live">En vivo</div>
+                    </div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-label">Rendimiento Mensual</div>
+                            <div class="metric-value positive">+7% - 15%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Stop Out Máximo</div>
+                            <div class="metric-value neutral">15%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Capital Protegido</div>
+                            <div class="metric-value positive">100%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Broker</div>
+                            <div class="metric-value neutral">VT Markets</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What is SIA -->
+    <section class="what-is" id="que-es">
+        <div class="content-grid">
+            <div class="content-text">
+                <h3>¿Qué es SIA Capital?</h3>
+                <p>SIA Capital es un <strong>sistema de inversión automatizado</strong> diseñado para la gestión estructurada del capital en mercados financieros.</p>
+                <p>El sistema cuenta con más de <strong>7 años de desarrollo</strong> y 5 años de optimización continua, operando en entornos reales de mercado y adaptándose a diferentes condiciones financieras.</p>
+                <div class="highlight-box">
+                    <p><strong>Importante:</strong> SIA Capital no es un broker ni una entidad custodio de fondos. Su función es el diseño, operación y mantenimiento de estrategias automatizadas de inversión.</p>
+                </div>
+                <p>El objetivo de SIA Capital es ofrecer al inversionista una solución automatizada, disciplinada y transparente para la gestión de su capital.</p>
+                <ul class="feature-list">
+                    <li>Operativa sin intervención emocional</li>
+                    <li>Estrategias basadas en criterios técnicos objetivos</li>
+                    <li>Control total del cliente sobre su capital</li>
+                    <li>Transparencia en todas las operaciones</li>
+                </ul>
+            </div>
+            <div class="visual-card">
+                <div class="big-number">+7</div>
+                <p>Años de desarrollo y optimización continua</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Operating Model -->
+    <section class="model" id="modelo">
+        <div class="section-header">
+            <h2>Modelo Operativo</h2>
+            <p>Estrategias automatizadas basadas en reglas predefinidas y criterios técnicos objetivos</p>
+        </div>
+        <div class="model-grid">
+            <div class="model-card">
+                <div class="model-icon">⚡</div>
+                <h3>Automatización Total</h3>
+                <p>Las operaciones se ejecutan de forma sistemática, sin intervención emocional ni discrecional, directamente sobre la cuenta del cliente.</p>
+            </div>
+            <div class="model-card">
+                <div class="model-icon">🔄</div>
+                <h3>Replicación de Operaciones</h3>
+                <p>Sistema de replicación que copia las señales de trading a la cuenta del cliente en el broker, manteniendo total sincronización.</p>
+            </div>
+            <div class="model-card">
+                <div class="model-icon">🎯</div>
+                <h3>Control Total</h3>
+                <p>El cliente mantiene en todo momento el control total de su cuenta, capital y acceso operativo. SIA no tiene acceso directo.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results -->
+    <section class="results" id="resultados">
+        <div class="section-header">
+            <h2>Resultados y Expectativas</h2>
+            <p>Desempeño histórico del sistema en entornos reales de mercado</p>
+        </div>
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="number">7%</div>
+                <div class="label">Rendimiento mínimo estimado mensual</div>
+            </div>
+            <div class="result-card">
+                <div class="number">15%</div>
+                <div class="label">Rendimiento máximo estimado mensual</div>
+            </div>
+            <div class="result-card">
+                <div class="number">5+</div>
+                <div class="label">Años de optimización continua</div>
+            </div>
+            <div class="result-card">
+                <div class="number">100+</div>
+                <div class="label">Instrumentos disponibles</div>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <p>⚠️ Los datos de rendimiento son referenciales y basados en resultados pasados. No constituyen garantía de rendimiento futuro. Los mercados financieros implican riesgo y los resultados pueden variar según las condiciones del mercado.</p>
+        </div>
+    </section>
+    
+    <!-- Risk Management -->
+    <section class="risk" id="riesgo">
+        <div class="section-header">
+            <h2>Gestión de Riesgo y Control</h2>
+            <p>Protección robusta para preservar tu capital</p>
+        </div>
+        <div class="risk-content">
+            <div class="risk-box">
+                <div class="risk-visual">
+                    <div class="stop-circle">
+                        <span>15%</span>
+                    </div>
+                </div>
+                <div class="risk-text">
+                    <h3>Stop Out Máximo del 15%</h3>
+                    <p>SIA Capital incorpora un mecanismo de protección de capital mediante un Stop Out máximo del 15%.</p>
+                    <p>Al alcanzarse este nivel, el sistema detiene automáticamente la operativa para limitar la exposición al riesgo.</p>
+                    <ul class="risk-list">
+                        <li>Protección del capital剩余 después del stop out</li>
+                        <li>Detención automática de operativa</li>
+                        <li>Enfoque en consistencia a mediano y largo plazo</li>
+                        <li>Gestión disciplinada del riesgo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Security -->
+    <section class="security" id="seguridad">
+        <div class="section-header">
+            <h2>Custodia y Seguridad</h2>
+            <p>Fondos protegidos bajo estándares de seguridad financiera</p>
+        </div>
+        <div class="security-grid">
+            <div class="security-card">
+                <h4>🏦 Custodia Independiente</h4>
+                <p>Los fondos se mantienen exclusivamente en cuentas a nombre del cliente, dentro del broker regulado. SIA Capital no tiene custodia del capital.</p>
+            </div>
+            <div class="security-card">
+                <h4>🔐 Control Total</h4>
+                <p>El cliente conserva en todo momento el control total sobre su capital, retiros y operaciones. Sin intervención de terceros.</p>
+            </div>
+            <div class="security-card">
+                <h4>✅ Broker Regulado</h4>
+                <p>La operativa se realiza a través de VT Markets, broker internacional regulado, responsable de la custodia y ejecución de órdenes.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Insurance -->
+    <section class="insurance">
+        <div class="insurance-content">
+            <div class="insurance-badge">🛡️</div>
+            <h2>Protección y Seguro del Broker</h2>
+            <p>VT Markets cuenta con cobertura de seguro para protección adicional de los fondos de los clientes.</p>
+            <div class="insurance-amount">
+                <span>Cobertura por reclamante hasta</span>
+                <strong>$1,000,000 USD</strong>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Póliza de Excess of Loss Insurance suscrita en Lloyd's of London, administrada por Willis Towers Watson.</p>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>¿Listo para comenzar?</h2>
+            <p>Abre tu cuenta en VT Markets y accede al sistema SIA Capital en minutos.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Abre tu cuenta</h4>
+                    <p>Regístrate en VT Markets con código refe: <strong>7258139</strong></p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Deposita fondos</h4>
+                    <p>Deposita capital en tu cuenta del broker regulado</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Activa SIA</h4>
+                    <p>Conecta tu cuenta al sistema y comienza a operar</p>
+                </div>
+            </div>
+            <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                Abrir Cuenta Ahora
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">Código de Referido: <strong>7258139</strong></p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">SIA</div>
+                        <div class="logo-text">SIA <span>Capital</span></div>
+                    </div>
+                    <p>Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Empresa</h4>
+                    <a href="#que-es">Qué es SIA</a>
+                    <a href="#modelo">Modelo Operativo</a>
+                    <a href="#resultados">Resultados</a>
+                    <a href="#seguridad">Seguridad</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Aviso de Riesgo</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contacto</h4>
+                    <a href="#">Soporte</a>
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="https://www.vtmarkets.com/trade-now/?affid=7258139">Abrir Cuenta</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SIA Capital. Todos los derechos reservados.</p>
+                <p class="footer-disclaimer">Disclaimer: El trading de CFDs y forex conlleva un alto nivel de riesgo. Puede no ser adecuado para todos los inversores. Los resultados pasados no garantizan rendimientos futuros. Antes de operar, asegúrese de comprender los riesgos involucrados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
