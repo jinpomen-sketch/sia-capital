@@ -27,7 +27,14 @@
         "description": "Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.",
         "url": "https://siacapital.io",
         "areaServed": "Global",
-        "serviceType": "Automated Investment System"
+        "serviceType": "Automated Investment System",
+        "email": "info@siacapital.io",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-33-1557-7731",
+            "contactType": "Customer Service",
+            "availableLanguage": ["Spanish", "English"]
+        }
     }
     </script>
     
@@ -74,6 +81,37 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.25rem;
+            background: rgba(0,0,0,0.2);
+            padding: 0.25rem;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.4rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .lang-btn:hover {
+            color: var(--accent);
+        }
+        
+        .lang-btn.active {
+            background: var(--gradient);
+            color: var(--primary);
         }
         
         .logo {
@@ -421,6 +459,72 @@
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .audit-hero {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .audit-hero .icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .audit-hero .text {
+            flex: 1;
+        }
+        
+        .audit-hero .label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 0.2rem;
+        }
+        
+        .audit-hero .desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        .audit-box {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.12) 0%, rgba(201, 162, 39, 0.04) 100%);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .audit-box .icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+        
+        .audit-box .text {
+            flex: 1;
+        }
+        
+        .audit-box .label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .audit-box .desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
         }
         
         .visual-card .big-number {
@@ -905,11 +1009,16 @@
                 <div class="logo-text">SIA <span>Capital</span></div>
             </div>
             <nav class="nav">
-                <a href="#que-es">Qué es SIA</a>
-                <a href="#modelo">Modelo</a>
-                <a href="#resultados">Resultados</a>
-                <a href="#seguridad">Seguridad</a>
+                <a href="#que-es" data-i18n="nav.what">Qué es SIA</a>
+                <a href="#modelo" data-i18n="nav.model">Modelo</a>
+                <a href="#resultados" data-i18n="nav.results">Resultados</a>
+                <a href="#seguridad" data-i18n="nav.security">Seguridad</a>
+                <a href="#contacto">Contacto</a>
             </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary">Comenzar</a>
         </div>
     </header>
@@ -918,51 +1027,58 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="badge">
+                <div class="badge" data-i18n="hero.badge">
                     Sistema de Inversión Automatizado
                 </div>
-                <h1>Gestión Estructurada del Capital en <span>Mercados Financieros</span></h1>
-                <p>SIA Capital es un sistema de inversión automatizado diseñado para inversionistas que buscan disciplina operativa, gestión estructurada del riesgo y transparencia total.</p>
-                <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary">
+                <h1><span data-i18n="hero.title1">Gestión Estructurada del Capital en </span><span>Mercados Financieros</span></h1>
+                <p data-i18n="hero.p">SIA Capital es un sistema de inversión automatizado diseñado para inversionistas que buscan disciplina operativa, gestión estructurada del riesgo y transparencia total.</p>
+                <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary" data-i18n="hero.cta">
                     Abrir Cuenta en VT Markets
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <div class="hero-stats">
                     <div class="stat">
-                        <h3>+7 años</h3>
-                        <p>Desarrollo continuo</p>
+                        <h3 data-i18n="hero.stat1.1">+7 años</h3>
+                        <p data-i18n="hero.stat1.2">Desarrollo continuo</p>
                     </div>
                     <div class="stat">
-                        <h3>100%</h3>
-                        <p>Control del cliente</p>
+                        <h3 data-i18n="hero.stat2.1">100%</h3>
+                        <p data-i18n="hero.stat2.2">Control del cliente</p>
                     </div>
                     <div class="stat">
-                        <h3>24/5</h3>
-                        <p>Operativa automatizada</p>
+                        <h3 data-i18n="hero.stat3.1">24/5</h3>
+                        <p data-i18n="hero.stat3.2">Operativa automatizada</p>
+                    </div>
+                </div>
+                <div class="audit-hero">
+                    <span class="icon">📊</span>
+                    <div class="text">
+                        <div class="label" data-i18n="audit.hero.label">Cuenta Auditada 2021–2026</div>
+                        <div class="desc" data-i18n="audit.hero.desc">Disponible bajo petición para usuarios verificados</div>
                     </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="hero-card">
                     <div class="card-header">
-                        <h4>Rendimiento del Sistema</h4>
-                        <div class="live">En vivo</div>
+                        <h4 data-i18n="hero.card.title">Rendimiento del Sistema</h4>
+                        <div class="live" data-i18n="hero.card.live">En vivo</div>
                     </div>
                     <div class="metrics">
                         <div class="metric">
-                            <div class="metric-label">Rendimiento Mensual</div>
+                            <div class="metric-label" data-i18n="hero.card.m1">Rendimiento Mensual</div>
                             <div class="metric-value positive">+7% - 15%</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-label">Stop Out Máximo</div>
+                            <div class="metric-label" data-i18n="hero.card.m2">Stop Out Máximo</div>
                             <div class="metric-value neutral">15%</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-label">Capital Protegido</div>
+                            <div class="metric-label" data-i18n="hero.card.m3">Capital Protegido</div>
                             <div class="metric-value positive">100%</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-label">Broker</div>
+                            <div class="metric-label" data-i18n="hero.card.m4">Broker</div>
                             <div class="metric-value neutral">VT Markets</div>
                         </div>
                     </div>
@@ -975,23 +1091,30 @@
     <section class="what-is" id="que-es">
         <div class="content-grid">
             <div class="content-text">
-                <h3>¿Qué es SIA Capital?</h3>
-                <p>SIA Capital es un <strong>sistema de inversión automatizado</strong> diseñado para la gestión estructurada del capital en mercados financieros.</p>
-                <p>El sistema cuenta con más de <strong>7 años de desarrollo</strong> y 5 años de optimización continua, operando en entornos reales de mercado y adaptándose a diferentes condiciones financieras.</p>
+                <h3 data-i18n="about.title">¿Qué es SIA Capital?</h3>
+                <p><span data-i18n="about.p1">SIA Capital es un </span><strong data-i18n="about.p1b">sistema de inversión automatizado</strong><span data-i18n="about.p2"> diseñado para la gestión estructurada del capital en mercados financieros.</span></p>
+                <p><span data-i18n="about.p3">El sistema cuenta con más de </span><strong data-i18n="about.p3b">7 años de desarrollo</strong><span data-i18n="about.p4"> y 5 años de optimización continua, operando en entornos reales de mercado y adaptándose a diferentes condiciones financieras.</span></p>
                 <div class="highlight-box">
-                    <p><strong>Importante:</strong> SIA Capital no es un broker ni una entidad custodio de fondos. Su función es el diseño, operación y mantenimiento de estrategias automatizadas de inversión.</p>
+                    <p><strong data-i18n="about.important">Importante:</strong> <span data-i18n="about.important.text">SIA Capital no es un broker ni una entidad custodio de fondos. Su función es el diseño, operación y mantenimiento de estrategias automatizadas de inversión.</span></p>
                 </div>
-                <p>El objetivo de SIA Capital es ofrecer al inversionista una solución automatizada, disciplinada y transparente para la gestión de su capital.</p>
+                <p data-i18n="about.p5">El objetivo de SIA Capital es ofrecer al inversionista una solución automatizada, disciplinada y transparente para la gestión de su capital.</p>
                 <ul class="feature-list">
-                    <li>Operativa sin intervención emocional</li>
-                    <li>Estrategias basadas en criterios técnicos objetivos</li>
-                    <li>Control total del cliente sobre su capital</li>
-                    <li>Transparencia en todas las operaciones</li>
+                    <li data-i18n="about.f1">Operativa sin intervención emocional</li>
+                    <li data-i18n="about.f2">Estrategias basadas en criterios técnicos objetivos</li>
+                    <li data-i18n="about.f3">Control total del cliente sobre su capital</li>
+                    <li data-i18n="about.f4">Transparencia en todas las operaciones</li>
                 </ul>
+                <div class="audit-box">
+                    <span class="icon">📊</span>
+                    <div class="text">
+                        <div class="label" data-i18n="audit.box.label">Cuenta Auditada 2021–2026</div>
+                        <div class="desc" data-i18n="audit.box.desc">Disponible bajo petición para usuarios verificados. 5 años de resultados comprobables en mercados reales.</div>
+                    </div>
+                </div>
             </div>
             <div class="visual-card">
-                <div class="big-number">+7</div>
-                <p>Años de desarrollo y optimización continua</p>
+                <div class="big-number" data-i18n="about.big">+7</div>
+                <p data-i18n="about.big.text">Años de desarrollo y optimización continua</p>
             </div>
         </div>
     </section>
@@ -999,24 +1122,24 @@
     <!-- Operating Model -->
     <section class="model" id="modelo">
         <div class="section-header">
-            <h2>Modelo Operativo</h2>
-            <p>Estrategias automatizadas basadas en reglas predefinidas y criterios técnicos objetivos</p>
+            <h2 data-i18n="model.title">Modelo Operativo</h2>
+            <p data-i18n="model.subtitle">Estrategias automatizadas basadas en reglas predefinidas y criterios técnicos objetivos</p>
         </div>
         <div class="model-grid">
             <div class="model-card">
                 <div class="model-icon">⚡</div>
-                <h3>Automatización Total</h3>
-                <p>Las operaciones se ejecutan de forma sistemática, sin intervención emocional ni discrecional, directamente sobre la cuenta del cliente.</p>
+                <h3 data-i18n="model.c1.title">Automatización Total</h3>
+                <p data-i18n="model.c1.desc">Las operaciones se ejecutan de forma sistemática, sin intervención emocional ni discrecional, directamente sobre la cuenta del cliente.</p>
             </div>
             <div class="model-card">
                 <div class="model-icon">🔄</div>
-                <h3>Replicación de Operaciones</h3>
-                <p>Sistema de replicación que copia las señales de trading a la cuenta del cliente en el broker, manteniendo total sincronización.</p>
+                <h3 data-i18n="model.c2.title">Replicación de Operaciones</h3>
+                <p data-i18n="model.c2.desc">Sistema de replicación que copia las señales de trading a la cuenta del cliente en el broker, manteniendo total sincronización.</p>
             </div>
             <div class="model-card">
                 <div class="model-icon">🎯</div>
-                <h3>Control Total</h3>
-                <p>El cliente mantiene en todo momento el control total de su cuenta, capital y acceso operativo. SIA no tiene acceso directo.</p>
+                <h3 data-i18n="model.c3.title">Control Total</h3>
+                <p data-i18n="model.c3.desc">El cliente mantiene en todo momento el control total de su cuenta, capital y acceso operativo. SIA no tiene acceso directo.</p>
             </div>
         </div>
     </section>
@@ -1024,54 +1147,54 @@
     <!-- Results -->
     <section class="results" id="resultados">
         <div class="section-header">
-            <h2>Resultados y Expectativas</h2>
-            <p>Desempeño histórico del sistema en entornos reales de mercado</p>
+            <h2 data-i18n="results.title">Resultados y Expectativas</h2>
+            <p data-i18n="results.subtitle">Desempeño histórico del sistema en entornos reales de mercado</p>
         </div>
         <div class="results-grid">
             <div class="result-card">
-                <div class="number">7%</div>
-                <div class="label">Rendimiento mínimo estimado mensual</div>
+                <div class="number" data-i18n="results.r1">7%</div>
+                <div class="label" data-i18n="results.r1.label">Rendimiento mínimo estimado mensual</div>
             </div>
             <div class="result-card">
-                <div class="number">15%</div>
-                <div class="label">Rendimiento máximo estimado mensual</div>
+                <div class="number" data-i18n="results.r2">15%</div>
+                <div class="label" data-i18n="results.r2.label">Rendimiento máximo estimado mensual</div>
             </div>
             <div class="result-card">
-                <div class="number">5+</div>
-                <div class="label">Años de optimización continua</div>
+                <div class="number" data-i18n="results.r3">5+</div>
+                <div class="label" data-i18n="results.r3.label">Años de optimización continua</div>
             </div>
             <div class="result-card">
-                <div class="number">100+</div>
-                <div class="label">Instrumentos disponibles</div>
+                <div class="number" data-i18n="results.r4">100+</div>
+                <div class="label" data-i18n="results.r4.label">Instrumentos disponibles</div>
             </div>
         </div>
         <div class="disclaimer">
-            <p>⚠️ Los datos de rendimiento son referenciales y basados en resultados pasados. No constituyen garantía de rendimiento futuro. Los mercados financieros implican riesgo y los resultados pueden variar según las condiciones del mercado.</p>
+            <p data-i18n="results.disclaimer">⚠️ Los datos de rendimiento son referenciales y basados en resultados pasados. No constituyen garantía de rendimiento futuro. Los mercados financieros implican riesgo y los resultados pueden variar según las condiciones del mercado.</p>
         </div>
     </section>
     
     <!-- Risk Management -->
     <section class="risk" id="riesgo">
         <div class="section-header">
-            <h2>Gestión de Riesgo y Control</h2>
-            <p>Protección robusta para preservar tu capital</p>
+            <h2 data-i18n="risk.title">Gestión de Riesgo y Control</h2>
+            <p data-i18n="risk.subtitle">Protección robusta para preservar tu capital</p>
         </div>
         <div class="risk-content">
             <div class="risk-box">
                 <div class="risk-visual">
                     <div class="stop-circle">
-                        <span>15%</span>
+                        <span data-i18n="risk.circle">15%</span>
                     </div>
                 </div>
                 <div class="risk-text">
-                    <h3>Stop Out Máximo del 15%</h3>
-                    <p>SIA Capital incorpora un mecanismo de protección de capital mediante un Stop Out máximo del 15%.</p>
-                    <p>Al alcanzarse este nivel, el sistema detiene automáticamente la operativa para limitar la exposición al riesgo.</p>
+                    <h3 data-i18n="risk.h3">Stop Out Máximo del 15%</h3>
+                    <p data-i18n="risk.p1">SIA Capital incorpora un mecanismo de protección de capital mediante un Stop Out máximo del 15%.</p>
+                    <p data-i18n="risk.p2">Al alcanzarse este nivel, el sistema detiene automáticamente la operativa para limitar la exposición al riesgo.</p>
                     <ul class="risk-list">
-                        <li>Protección del capital剩余 después del stop out</li>
-                        <li>Detención automática de operativa</li>
-                        <li>Enfoque en consistencia a mediano y largo plazo</li>
-                        <li>Gestión disciplinada del riesgo</li>
+                        <li data-i18n="risk.l1">Protección del capital restante después del stop out</li>
+                        <li data-i18n="risk.l2">Detención automática de operativa</li>
+                        <li data-i18n="risk.l3">Enfoque en consistencia a mediano y largo plazo</li>
+                        <li data-i18n="risk.l4">Gestión disciplinada del riesgo</li>
                     </ul>
                 </div>
             </div>
@@ -1081,21 +1204,21 @@
     <!-- Security -->
     <section class="security" id="seguridad">
         <div class="section-header">
-            <h2>Custodia y Seguridad</h2>
-            <p>Fondos protegidos bajo estándares de seguridad financiera</p>
+            <h2 data-i18n="security.title">Custodia y Seguridad</h2>
+            <p data-i18n="security.subtitle">Fondos protegidos bajo estándares de seguridad financiera</p>
         </div>
         <div class="security-grid">
             <div class="security-card">
-                <h4>🏦 Custodia Independiente</h4>
-                <p>Los fondos se mantienen exclusivamente en cuentas a nombre del cliente, dentro del broker regulado. SIA Capital no tiene custodia del capital.</p>
+                <h4 data-i18n="security.c1.title">🏦 Custodia Independiente</h4>
+                <p data-i18n="security.c1.desc">Los fondos se mantienen exclusivamente en cuentas a nombre del cliente, dentro del broker regulado. SIA Capital no tiene custodia del capital.</p>
             </div>
             <div class="security-card">
-                <h4>🔐 Control Total</h4>
-                <p>El cliente conserva en todo momento el control total sobre su capital, retiros y operaciones. Sin intervención de terceros.</p>
+                <h4 data-i18n="security.c2.title">🔐 Control Total</h4>
+                <p data-i18n="security.c2.desc">El cliente conserva en todo momento el control total sobre su capital, retiros y operaciones. Sin intervención de terceros.</p>
             </div>
             <div class="security-card">
-                <h4>✅ Broker Regulado</h4>
-                <p>La operativa se realiza a través de VT Markets, broker internacional regulado, responsable de la custodia y ejecución de órdenes.</p>
+                <h4 data-i18n="security.c3.title">✅ Broker Regulado</h4>
+                <p data-i18n="security.c3.desc">La operativa se realiza a través de VT Markets, broker internacional regulado, responsable de la custodia y ejecución de órdenes.</p>
             </div>
         </div>
     </section>
@@ -1104,43 +1227,63 @@
     <section class="insurance">
         <div class="insurance-content">
             <div class="insurance-badge">🛡️</div>
-            <h2>Protección y Seguro del Broker</h2>
-            <p>VT Markets cuenta con cobertura de seguro para protección adicional de los fondos de los clientes.</p>
+            <h2 data-i18n="insurance.title">Protección y Seguro del Broker</h2>
+            <p data-i18n="insurance.p">VT Markets cuenta con cobertura de seguro para protección adicional de los fondos de los clientes.</p>
             <div class="insurance-amount">
-                <span>Cobertura por reclamante hasta</span>
-                <strong>$1,000,000 USD</strong>
+                <span data-i18n="insurance.amount.label">Cobertura por reclamante hasta</span>
+                <strong data-i18n="insurance.amount.value">$1,000,000 USD</strong>
             </div>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Póliza de Excess of Loss Insurance suscrita en Lloyd's of London, administrada por Willis Towers Watson.</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;" data-i18n="insurance.note">Póliza de Excess of Loss Insurance suscrita en Lloyd's of London, administrada por Willis Towers Watson.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contacto" style="background: var(--secondary); padding: 4rem 2rem;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 data-i18n="contact.title" style="font-size: 2rem; margin-bottom: 2rem; color: var(--white);">Contacto</h2>
+            <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div style="background: rgba(0,0,0,0.2); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">📧 <span data-i18n="contact.email">Email</span></p>
+                    <p style="color: var(--accent); font-size: 1.2rem; font-weight: 600;">info@siacapital.io</p>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid rgba(201, 162, 39, 0.2);">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">💬 <span data-i18n="contact.whatsapp">WhatsApp</span></p>
+                    <p style="color: var(--accent); font-size: 1.2rem; font-weight: 600;">+52 33 1557 7731</p>
+                </div>
+            </div>
+            <a href="https://wa.me/523315577731" class="btn-primary" style="font-size: 1rem; padding: 0.8rem 2rem;" data-i18n="contact.cta">
+                💬 Escríbenos directamente
+            </a>
         </div>
     </section>
     
     <!-- CTA -->
     <section class="cta">
         <div class="cta-content">
-            <h2>¿Listo para comenzar?</h2>
-            <p>Abre tu cuenta en VT Markets y accede al sistema SIA Capital en minutos.</p>
+            <h2 data-i18n="cta.title">¿Listo para comenzar?</h2>
+            <p data-i18n="cta.p">Abre tu cuenta en VT Markets y accede al sistema SIA Capital en minutos.</p>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h4>Abre tu cuenta</h4>
-                    <p>Regístrate en VT Markets con código refe: <strong>7258139</strong></p>
+                    <h4 data-i18n="cta.s1.title">Abre tu cuenta</h4>
+                    <p><span data-i18n="cta.s1.desc">Regístrate en VT Markets con código refe: </span><strong>7258139</strong></p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h4>Deposita fondos</h4>
-                    <p>Deposita capital en tu cuenta del broker regulado</p>
+                    <h4 data-i18n="cta.s2.title">Deposita fondos</h4>
+                    <p data-i18n="cta.s2.desc">Deposita capital en tu cuenta del broker regulado</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h4>Activa SIA</h4>
-                    <p>Conecta tu cuenta al sistema y comienza a operar</p>
+                    <h4 data-i18n="cta.s3.title">Activa SIA</h4>
+                    <p data-i18n="cta.s3.desc">Conecta tu cuenta al sistema y comienza a operar</p>
                 </div>
             </div>
-            <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+            <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;" data-i18n="cta.btn">
                 Abrir Cuenta Ahora
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">Código de Referido: <strong>7258139</strong></p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);"><span data-i18n="cta.code">Código de Referido: </span><strong>7258139</strong></p>
         </div>
     </section>
     
@@ -1153,33 +1296,310 @@
                         <div class="logo-icon">SIA</div>
                         <div class="logo-text">SIA <span>Capital</span></div>
                     </div>
-                    <p>Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.</p>
+                    <p data-i18n="footer.brand.desc">Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.</p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">🌐 www.siacapital.io</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Empresa</h4>
-                    <a href="#que-es">Qué es SIA</a>
-                    <a href="#modelo">Modelo Operativo</a>
-                    <a href="#resultados">Resultados</a>
-                    <a href="#seguridad">Seguridad</a>
+                    <h4 data-i18n="footer.company">Empresa</h4>
+                    <a href="#que-es" data-i18n="footer.f1">Qué es SIA</a>
+                    <a href="#modelo" data-i18n="footer.f2">Modelo Operativo</a>
+                    <a href="#resultados" data-i18n="footer.f3">Resultados</a>
+                    <a href="#seguridad" data-i18n="footer.f4">Seguridad</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Legal</h4>
-                    <a href="#">Términos y Condiciones</a>
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Aviso de Riesgo</a>
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <a href="#" data-i18n="footer.f5">Términos y Condiciones</a>
+                    <a href="#" data-i18n="footer.f6">Política de Privacidad</a>
+                    <a href="#" data-i18n="footer.f7">Aviso de Riesgo</a>
                 </div>
                 <div class="footer-links">
-                    <h4>Contacto</h4>
-                    <a href="#">Soporte</a>
-                    <a href="#">Preguntas Frecuentes</a>
-                    <a href="https://www.vtmarkets.com/trade-now/?affid=7258139">Abrir Cuenta</a>
+                    <h4 data-i18n="footer.contact">Contacto</h4>
+                    <a href="#contacto" data-i18n="footer.f8">Soporte</a>
+                    <a href="#" data-i18n="footer.f9">Preguntas Frecuentes</a>
+                    <a href="https://www.vtmarkets.com/trade-now/?affid=7258139" data-i18n="footer.f10">Abrir Cuenta</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 SIA Capital. Todos los derechos reservados.</p>
-                <p class="footer-disclaimer">Disclaimer: El trading de CFDs y forex conlleva un alto nivel de riesgo. Puede no ser adecuado para todos los inversores. Los resultados pasados no garantizan rendimientos futuros. Antes de operar, asegúrese de comprender los riesgos involucrados.</p>
+                <p data-i18n="footer.copy">© 2026 SIA Capital. Todos los derechos reservados.</p>
+                <p class="footer-disclaimer" data-i18n="footer.disclaimer">Disclaimer: El trading de CFDs y forex conlleva un alto nivel de riesgo. Puede no ser adecuado para todos los inversores. Los resultados pasados no garantizan rendimientos futuros. Antes de operar, asegúrese de comprender los riesgos involucrados.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+    const translations = {
+        es: {
+            'nav.what': 'Qué es SIA',
+            'nav.model': 'Modelo',
+            'nav.results': 'Resultados',
+            'nav.security': 'Seguridad',
+            'nav.cta': 'Comenzar',
+            'hero.badge': 'Sistema de Inversión Automatizado',
+            'hero.title1': 'Gestión Estructurada del Capital en ',
+            'hero.title2': 'Mercados Financieros',
+            'hero.p': 'SIA Capital es un sistema de inversión automatizado diseñado para inversionistas que buscan disciplina operativa, gestión estructurada del riesgo y transparencia total.',
+            'hero.cta': 'Abrir Cuenta en VT Markets',
+            'hero.stat1.1': '+7 años',
+            'hero.stat1.2': 'Desarrollo continuo',
+            'hero.stat2.1': '100%',
+            'hero.stat2.2': 'Control del cliente',
+            'hero.stat3.1': '24/5',
+            'hero.stat3.2': 'Operativa automatizada',
+            'hero.audit': '📊 Cuenta auditada 2021-2026 disponible bajo petición',
+            'hero.card.title': 'Rendimiento del Sistema',
+            'hero.card.live': 'En vivo',
+            'hero.card.m1': 'Rendimiento Mensual',
+            'hero.card.m2': 'Stop Out Máximo',
+            'hero.card.m3': 'Capital Protegido',
+            'hero.card.m4': 'Broker',
+            'about.title': '¿Qué es SIA Capital?',
+            'about.p1': 'SIA Capital es un ',
+            'about.p1b': 'sistema de inversión automatizado',
+            'about.p2': ' diseñado para la gestión estructurada del capital en mercados financieros.',
+            'about.p3': 'El sistema cuenta con más de ',
+            'about.p3b': '7 años de desarrollo',
+            'about.p4': ' y 5 años de optimización continua, operando en entornos reales de mercado y adaptándose a diferentes condiciones financieras.',
+            'about.important': 'Importante:',
+            'about.important.text': 'SIA Capital no es un broker ni una entidad custodio de fondos. Su función es el diseño, operación y mantenimiento de estrategias automatizadas de inversión.',
+            'about.p5': 'El objetivo de SIA Capital es ofrecer al inversionista una solución automatizada, disciplinada y transparente para la gestión de su capital.',
+            'about.f1': 'Operativa sin intervención emocional',
+            'about.f2': 'Estrategias basadas en criterios técnicos objetivos',
+            'about.f3': 'Control total del cliente sobre su capital',
+            'about.f4': 'Transparencia en todas las operaciones',
+            'about.audit': '📊 Cuenta auditada 2021-2026 disponible bajo petición',
+            'audit.hero.label': 'Cuenta Auditada 2021–2026',
+            'audit.hero.desc': 'Disponible bajo petición para usuarios verificados',
+            'audit.box.label': 'Cuenta Auditada 2021–2026',
+            'audit.box.desc': 'Disponible bajo petición para usuarios verificados. 5 años de resultados comprobables en mercados reales.',
+            'about.big': '+7',
+            'about.big.text': 'Años de desarrollo y optimización continua',
+            'model.title': 'Modelo Operativo',
+            'model.subtitle': 'Estrategias automatizadas basadas en reglas predefinidas y criterios técnicos objetivos',
+            'model.c1.title': 'Automatización Total',
+            'model.c1.desc': 'Las operaciones se ejecutan de forma sistemática, sin intervención emocional ni discrecional, directamente sobre la cuenta del cliente.',
+            'model.c2.title': 'Replicación de Operaciones',
+            'model.c2.desc': 'Sistema de replicación que copia las señales de trading a la cuenta del cliente en el broker, manteniendo total sincronización.',
+            'model.c3.title': 'Control Total',
+            'model.c3.desc': 'El cliente mantiene en todo momento el control total de su cuenta, capital y acceso operativo. SIA no tiene acceso directo.',
+            'results.title': 'Resultados y Expectativas',
+            'results.subtitle': 'Desempeño histórico del sistema en entornos reales de mercado',
+            'results.r1': '7%',
+            'results.r1.label': 'Rendimiento mínimo estimado mensual',
+            'results.r2': '15%',
+            'results.r2.label': 'Rendimiento máximo estimado mensual',
+            'results.r3': '5+',
+            'results.r3.label': 'Años de optimización continua',
+            'results.r4': '100+',
+            'results.r4.label': 'Instrumentos disponibles',
+            'results.disclaimer': '⚠️ Los datos de rendimiento son referenciales y basados en resultados pasados. No constituyen garantía de rendimiento futuro. Los mercados financieros implican riesgo y los resultados pueden variar según las condiciones del mercado.',
+            'risk.title': 'Gestión de Riesgo y Control',
+            'risk.subtitle': 'Protección robusta para preservar tu capital',
+            'risk.circle': '15%',
+            'risk.h3': 'Stop Out Máximo del 15%',
+            'risk.p1': 'SIA Capital incorpora un mecanismo de protección de capital mediante un Stop Out máximo del 15%.',
+            'risk.p2': 'Al alcanzarse este nivel, el sistema detiene automáticamente la operativa para limitar la exposición al riesgo.',
+            'risk.l1': 'Protección del capital restante después del stop out',
+            'risk.l2': 'Detención automática de operativa',
+            'risk.l3': 'Enfoque en consistencia a mediano y largo plazo',
+            'risk.l4': 'Gestión disciplinada del riesgo',
+            'security.title': 'Custodia y Seguridad',
+            'security.subtitle': 'Fondos protegidos bajo estándares de seguridad financiera',
+            'security.c1.title': '🏦 Custodia Independiente',
+            'security.c1.desc': 'Los fondos se mantienen exclusivamente en cuentas a nombre del cliente, dentro del broker regulado. SIA Capital no tiene custodia del capital.',
+            'security.c2.title': '🔐 Control Total',
+            'security.c2.desc': 'El cliente conserva en todo momento el control total sobre su capital, retiros y operaciones. Sin intervención de terceros.',
+            'security.c3.title': '✅ Broker Regulado',
+            'security.c3.desc': 'La operativa se realiza a través de VT Markets, broker internacional regulado, responsable de la custodia y ejecución de órdenes.',
+            'insurance.title': 'Protección y Seguro del Broker',
+            'insurance.p': 'VT Markets cuenta con cobertura de seguro para protección adicional de los fondos de los clientes.',
+            'insurance.amount.label': 'Cobertura por reclamante hasta',
+            'insurance.amount.value': '$1,000,000 USD',
+            'insurance.note': 'Póliza de Excess of Loss Insurance suscrita en Lloyd\'s of London, administrada por Willis Towers Watson.',
+            'cta.title': '¿Listo para comenzar?',
+            'cta.p': 'Abre tu cuenta en VT Markets y accede al sistema SIA Capital en minutos.',
+            'cta.s1.title': 'Abre tu cuenta',
+            'cta.s1.desc': 'Regístrate en VT Markets con código refe: ',
+            'cta.s2.title': 'Deposita fondos',
+            'cta.s2.desc': 'Deposita capital en tu cuenta del broker regulado',
+            'cta.s3.title': 'Activa SIA',
+            'cta.s3.desc': 'Conecta tu cuenta al sistema y comienza a operar',
+            'cta.btn': 'Abrir Cuenta Ahora',
+            'cta.code': 'Código de Referido: ',
+            'footer.brand.desc': 'Sistema de inversión automatizado diseñado para la gestión estructurada del capital en mercados financieros.',
+            'footer.company': 'Empresa',
+            'footer.legal': 'Legal',
+            'footer.contact': 'Contacto',
+            'footer.f1': 'Qué es SIA',
+            'footer.f2': 'Modelo Operativo',
+            'footer.f3': 'Resultados',
+            'footer.f4': 'Seguridad',
+            'footer.f5': 'Términos y Condiciones',
+            'footer.f6': 'Política de Privacidad',
+            'footer.f7': 'Aviso de Riesgo',
+            'footer.f8': 'Soporte',
+            'footer.f9': 'Preguntas Frecuentes',
+            'footer.f10': 'Abrir Cuenta',
+            'footer.copy': '© 2026 SIA Capital. Todos los derechos reservados.',
+            'footer.disclaimer': 'Disclaimer: El trading de CFDs y forex conlleva un alto nivel de riesgo. Puede no ser adecuado para todos los inversores. Los resultados pasados no garantizan rendimientos futuros. Antes de operar, asegúrese de comprender los riesgos involucrados.',
+            'contact.title': 'Contacto',
+            'contact.email': 'Email',
+            'contact.whatsapp': 'WhatsApp',
+            'contact.cta': 'Escríbenos directamente'
+        },
+        en: {
+            'nav.what': 'What is SIA',
+            'nav.model': 'Model',
+            'nav.results': 'Results',
+            'nav.security': 'Security',
+            'nav.cta': 'Get Started',
+            'hero.badge': 'Automated Investment System',
+            'hero.title1': 'Structured Capital Management in ',
+            'hero.title2': 'Financial Markets',
+            'hero.p': 'SIA Capital is an automated investment system designed for investors seeking operational discipline, structured risk management, and total transparency.',
+            'hero.cta': 'Open Account at VT Markets',
+            'hero.stat1.1': '+7 years',
+            'hero.stat1.2': 'Continuous development',
+            'hero.stat2.1': '100%',
+            'hero.stat2.2': 'Client control',
+            'hero.stat3.1': '24/5',
+            'hero.stat3.2': 'Automated trading',
+            'hero.audit': '📊 Audited account 2021-2026 available upon request',
+            'hero.card.title': 'System Performance',
+            'hero.card.live': 'Live',
+            'hero.card.m1': 'Monthly Performance',
+            'hero.card.m2': 'Maximum Stop Out',
+            'hero.card.m3': 'Protected Capital',
+            'hero.card.m4': 'Broker',
+            'about.title': 'What is SIA Capital?',
+            'about.p1': 'SIA Capital is an ',
+            'about.p1b': 'automated investment system',
+            'about.p2': ' designed for structured capital management in financial markets.',
+            'about.p3': 'The system has ',
+            'about.p3b': '7 years of development',
+            'about.p4': ' and 5 years of continuous optimization, operating in real market environments and adapting to different conditions.',
+            'about.important': 'Important:',
+            'about.important.text': 'SIA Capital is not a broker or custodian of funds. Its function is the design, operation, and maintenance of automated investment strategies.',
+            'about.p5': 'The goal of SIA Capital is to offer investors an automated, disciplined, and transparent solution for capital management.',
+            'about.f1': 'Trading without emotional intervention',
+            'about.f2': 'Strategies based on objective technical criteria',
+            'about.f3': 'Total client control over their capital',
+            'about.f4': 'Transparency in all operations',
+            'about.audit': '📊 Audited account 2021-2026 available upon request',
+            'audit.hero.label': 'Audited Account 2021–2026',
+            'audit.hero.desc': 'Available upon request for verified users',
+            'audit.box.label': 'Audited Account 2021–2026',
+            'audit.box.desc': 'Available upon request for verified users. 5 years of verifiable results in real markets.',
+            'about.big': '+7',
+            'about.big.text': 'Years of development and continuous optimization',
+            'model.title': 'Operating Model',
+            'model.subtitle': 'Automated strategies based on predefined rules and objective technical criteria',
+            'model.c1.title': 'Full Automation',
+            'model.c1.desc': 'Operations are executed systematically, without emotional or discretionary intervention, directly on the client\'s account.',
+            'model.c2.title': 'Operations Replication',
+            'model.c2.desc': 'Replication system that copies trading signals to the client\'s account at the broker, maintaining total synchronization.',
+            'model.c3.title': 'Total Control',
+            'model.c3.desc': 'The client maintains total control of their account, capital, and operational access at all times. SIA has no direct access.',
+            'results.title': 'Results and Expectations',
+            'results.subtitle': 'Historical system performance in real market environments',
+            'results.r1': '7%',
+            'results.r1.label': 'Estimated minimum monthly return',
+            'results.r2': '15%',
+            'results.r2.label': 'Estimated maximum monthly return',
+            'results.r3': '5+',
+            'results.r3.label': 'Years of continuous optimization',
+            'results.r4': '100+',
+            'results.r4.label': 'Available instruments',
+            'results.disclaimer': '⚠️ Performance data is referential and based on past results. It does not constitute a guarantee of future performance. Financial markets involve risk and results may vary according to market conditions.',
+            'risk.title': 'Risk Management and Control',
+            'risk.subtitle': 'Robust protection to preserve your capital',
+            'risk.circle': '15%',
+            'risk.h3': 'Maximum 15% Stop Out',
+            'risk.p1': 'SIA Capital incorporates a capital protection mechanism through a maximum 15% Stop Out.',
+            'risk.p2': 'When this level is reached, the system automatically stops trading to limit risk exposure.',
+            'risk.l1': 'Protection of remaining capital after stop out',
+            'risk.l2': 'Automatic trading stop',
+            'risk.l3': 'Focus on medium and long-term consistency',
+            'risk.l4': 'Disciplined risk management',
+            'security.title': 'Custody and Security',
+            'security.subtitle': 'Funds protected under financial security standards',
+            'security.c1.title': '🏦 Independent Custody',
+            'security.c1.desc': 'Funds are held exclusively in accounts in the client\'s name, within the regulated broker. SIA Capital has no custody of capital.',
+            'security.c2.title': '🔐 Total Control',
+            'security.c2.desc': 'The client retains total control over their capital, withdrawals, and operations at all times. No third-party intervention.',
+            'security.c3.title': '✅ Regulated Broker',
+            'security.c3.desc': 'Operations are carried out through VT Markets, a regulated international broker, responsible for custody and order execution.',
+            'insurance.title': 'Broker Protection and Insurance',
+            'insurance.p': 'VT Markets has insurance coverage for additional protection of client funds.',
+            'insurance.amount.label': 'Coverage per claimant up to',
+            'insurance.amount.value': '$1,000,000 USD',
+            'insurance.note': 'Excess of Loss Insurance policy subscribed at Lloyd\'s of London, administered by Willis Towers Watson.',
+            'cta.title': 'Ready to get started?',
+            'cta.p': 'Open your account at VT Markets and access the SIA Capital system in minutes.',
+            'cta.s1.title': 'Open your account',
+            'cta.s1.desc': 'Register at VT Markets with code: ',
+            'cta.s2.title': 'Deposit funds',
+            'cta.s2.desc': 'Deposit capital into your regulated broker account',
+            'cta.s3.title': 'Activate SIA',
+            'cta.s3.desc': 'Connect your account to the system and start trading',
+            'cta.btn': 'Open Account Now',
+            'cta.code': 'Referral Code: ',
+            'footer.brand.desc': 'Automated investment system designed for structured capital management in financial markets.',
+            'footer.company': 'Company',
+            'footer.legal': 'Legal',
+            'footer.contact': 'Contact',
+            'footer.f1': 'What is SIA',
+            'footer.f2': 'Operating Model',
+            'footer.f3': 'Results',
+            'footer.f4': 'Security',
+            'footer.f5': 'Terms and Conditions',
+            'footer.f6': 'Privacy Policy',
+            'footer.f7': 'Risk Warning',
+            'footer.f8': 'Support',
+            'footer.f9': 'Frequently Asked Questions',
+            'footer.f10': 'Open Account',
+            'footer.copy': '© 2026 SIA Capital. All rights reserved.',
+            'footer.disclaimer': 'Disclaimer: Trading CFDs and forex carries a high level of risk. It may not be suitable for all investors. Past results do not guarantee future returns. Before trading, ensure you understand the risks involved.',
+            'contact.title': 'Contact',
+            'contact.email': 'Email',
+            'contact.whatsapp': 'WhatsApp',
+            'contact.cta': 'Contact us directly'
+        }
+    };
+
+    let currentLang = 'es';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+        
+        // Save preference
+        localStorage.setItem('sia-lang', lang);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('sia-lang');
+        if (saved && translations[saved]) {
+            setLanguage(saved);
+        }
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+    });
+    </script>
 </body>
 </html>
